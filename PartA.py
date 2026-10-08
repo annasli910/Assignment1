@@ -1,0 +1,24 @@
+def tokenize(text_file_path):
+    """
+    runtime complexity: O(n) where n is the number of characters in the file,
+    because we iterate through each character once
+    """
+    tokens = []
+    current_token = []
+
+    with open(text_file_path, 'r', encoding='utf-8', errors='ignore') as f:
+        while True:
+            chunk = f.read(1024)
+            if not chunk:
+                break
+            for char in chunk:
+                if char.isalnum():
+                    current_token.append(char.lower())
+                else:
+                    if current_token:
+                        tokens.append("".join(current_token))
+                        current_token = []
+        if current_token:
+            tokens.append("".join(current_token))
+
+    return tokens
