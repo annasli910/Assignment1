@@ -22,3 +22,17 @@ def tokenize(text_file_path):
             tokens.append("".join(current_token))
 
     return tokens
+
+def computeWordFrequencies(tokens):
+    """
+    runtime complexity: O(n) where n is the number of tokens,
+    since dictionary insertions/lookups take O(1) average time
+    """
+    freq_map = {}
+    for token in tokens:
+        if token in freq_map:
+            freq_map[token] += 1
+        else:
+            freq_map[token] = 1
+    return freq_map
+
