@@ -20,9 +20,8 @@ def tokenize(text_file_path):
                     if current_token:
                         tokens.append("".join(current_token))
                         current_token = []
-        if current_token:
+        if current_token: # catches trailing token at end of file
             tokens.append("".join(current_token))
-
     return tokens
 
 def computeWordFrequencies(tokens):
@@ -51,7 +50,7 @@ def main():
         print("Usage: python PartA.py <text_file>")
         sys.exit(1)
         
-    file_path = sys.argv[1] # takes the second argument which should be text_file
+    file_path = sys.argv[1] # stores the second argument which should be text_file
     tokens = tokenize(file_path) 
     freq_map = computeWordFrequencies(tokens)
     print_frequencies(freq_map)
