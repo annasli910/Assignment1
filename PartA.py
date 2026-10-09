@@ -36,7 +36,7 @@ def computeWordFrequencies(tokens):
             freq_map[token] = 1
     return freq_map
 
-def print_frequencies(freq_map):
+def print(freq_map):
     """
     runtime complexity: O(nlogn) where n is the number of tokens
     """
