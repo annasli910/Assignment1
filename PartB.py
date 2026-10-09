@@ -15,6 +15,7 @@ def main():
     tokens2 = set(tokenize(file2_path))
 
     common_tokens = tokens1.intersection(tokens2) # O(1) time since sets
+    # print number of common words
     print(len(common_tokens))
 
 if __name__ == "__main__":
